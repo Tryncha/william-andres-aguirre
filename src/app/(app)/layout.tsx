@@ -1,27 +1,28 @@
-import Footer from '@/src/components/footer';
-import '../globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import Navbar from '@/src/components/navbar';
-
-const inter = Inter({ subsets: ['latin'] });
+import { inter } from '../lib/fonts';
+import Aside from '@/src/components/aside';
+import '../globals.css';
 
 export const metadata: Metadata = {
-  title: 'Sanity Next.js Portfolio Site',
-  description: 'A personal portfolio site built with Sanity and Next.js',
-  openGraph: {
-    images: 'add-your-open-graph-image-url-here'
-  }
+  title: 'William Andres Aguirre'
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-zinc-900 text-white`}>
-        <Navbar />
+    <html lang="es">
+      <body className={`${inter.className} bg-white`}>
+        <Aside />
         {children}
-        <Footer />
+        <footer className="ml-80 flex flex-col border-t border-gray-300 px-8 py-4 shadow-sm">
+          <span className="font-medium text-gray-600">&copy; William Andrés Aguirre Cortés · 2026</span>
+          <span className="text-xs text-gray-600 italic transition-all hover:font-medium">
+            &quot;Hacer de la fotografía y del análisis de la imagen una herramienta para entender, explicar y proponer
+            cambios políticos, sociales y humanos.&quot;
+          </span>
+        </footer>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

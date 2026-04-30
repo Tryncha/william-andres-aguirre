@@ -1,4 +1,5 @@
 import { PortableTextBlock } from 'sanity';
+import { CloudinaryResource } from '@cloudinary-util/types';
 
 export type ProfileType = {
   _id: string;
@@ -16,3 +17,8 @@ export type ProfileType = {
   socialLinks: string[];
   skills: string[];
 };
+
+export interface CloudinaryResponse {
+  next_cursor: string;
+  resources: CloudinaryResource[];
+}

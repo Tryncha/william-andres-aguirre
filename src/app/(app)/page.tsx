@@ -1,42 +1,44 @@
-import HeroSvg from '@/src/components/icons/hero';
-import { getProfile } from '@/src/sanity/sanity.query';
-import { ProfileType } from '@/src/types';
+import CloudImage from '@/src/components/cloud-image';
+import { CloudinaryResponse } from '@/src/types';
 
-export default async function Home() {
-  const profile: ProfileType[] = await getProfile();
+const HomePage = async () => {
+  const request = await fetch(
+    `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/resources/image`,
+    {
+      headers: {
+        Authorization: `Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + process.env.CLOUDINARY_API_SECRET).toString('base64')}`
+      }
+    }
+  );
+
+  const results = (await request.json()) as CloudinaryResponse;
+  const { resources } = results;
+
+  const images = resources.map((rsc) => ({
+    id: rsc.asset_id,
+    publicId: rsc.public_id,
+    imgSrc: rsc.secure_url,
+    width: rsc.width,
+    height: rsc.height
+  }));
 
   return (
-    <main className="mx-auto max-w-7xl px-6 lg:px-16">
-      <section className="mt-20 mb-16 flex flex-col items-start justify-between gap-x-12 lg:mt-32 xl:flex-row xl:items-center xl:justify-center">
-        {profile &&
-          profile.map((data) => (
-            <div
-              key={data._id}
-              className="max-w-2xl lg:max-w-2xl"
-            >
-              <h1 className="mb-6 min-w-full text-3xl leading-tight font-bold tracking-tight sm:text-5xl lg:min-w-[700px] lg:leading-[3.7rem]">
-                {data.headline}
-              </h1>
-              <p className="text-base leading-relaxed text-zinc-400">{data.shortBio}</p>
-              <ul className="my-10 flex items-center gap-x-6">
-                {Object.entries(data.socialLinks)
-                  .sort()
-                  .map(([key, value], id) => (
-                    <li key={id}>
-                      <a
-                        href={value}
-                        rel="noreferer noopener"
-                        className="mb-5 flex items-center gap-x-3 duration-300 hover:text-purple-400"
-                      >
-                        {key[0].toUpperCase() + key.toLowerCase().slice(1)}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          ))}
-        <HeroSvg />
-      </section>
+    <main className="ml-80 flex flex-1 flex-wrap items-center gap-2 bg-gray-50 p-16">
+      {images.map((img) => (
+        <div
+          key={img.id}
+          className="h-72.5 w-120 overflow-hidden"
+        >
+          <CloudImage
+            src={img.publicId}
+            width={img.width}
+            height={img.height}
+            alt={img.publicId}
+          />
+        </div>
+      ))}
     </main>
   );
-}
+};
+
+export default HomePage;
