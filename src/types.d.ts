@@ -18,7 +18,14 @@ export type ProfileType = {
   skills: string[];
 };
 
-export interface CloudinaryResponse {
-  next_cursor: string;
+export interface CldResourceResponse {
   resources: CloudinaryResource[];
+  next_cursor: string | null;
+}
+
+export interface CldFoldersResponse {
+  folders: CloudinaryResource[];
+  is_shared: boolean;
+  next_cursor: string | null;
+  total_count: number;
 }

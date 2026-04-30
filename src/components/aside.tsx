@@ -2,24 +2,35 @@ import { BiLogoInstagramAlt } from 'react-icons/bi';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { IoLogoFacebook, IoLogoLinkedin } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
+import Link from 'next/link';
+import { getProjects } from '../app/lib/cloudinary';
 
-const Aside = () => {
+const Aside = async () => {
+  const projects = await getProjects();
+
   return (
     <aside className="fixed inset-y-0 left-0 flex h-screen w-xs flex-col justify-between border-r border-gray-200 p-6 shadow-sm">
-      <div>
-        <h1 className="text-2xl font-bold tracking-wider uppercase">William A. Aguirre</h1>
-        <span className="text-sm tracking-wider uppercase">Fotógrafo</span>
+      <div className="flex flex-col">
+        <Link
+          href="/"
+          className="text-2xl font-bold tracking-wider uppercase hover:cursor-pointer"
+        >
+          William A. Aguirre
+        </Link>
+        <span className="text-sm tracking-widest text-gray-800 uppercase">Realismo Social</span>
       </div>
 
       {/* Navigation */}
       <nav className="flex flex-col">
-        <span className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium">Migrantes</span>
-        <span className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium">Calle de las guapas</span>
-        <span className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium">Plaza en pandemia</span>
-        <span className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium">
-          Paisaje humano del café
-        </span>
-        <span className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium">Vivienda digna</span>
+        {projects.map((prj) => (
+          <Link
+            key={prj.id}
+            href={prj.id}
+            className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium"
+          >
+            {prj.name}
+          </Link>
+        ))}
       </nav>
 
       {/* Social */}
