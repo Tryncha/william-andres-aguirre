@@ -19,6 +19,7 @@ export async function getImagesFrom({ project }: { project: string }) {
   return resources.map((rsc) => ({
     id: rsc.asset_id,
     publicId: rsc.public_id,
+    url: rsc.secure_url,
     width: rsc.width,
     height: rsc.height
   }));

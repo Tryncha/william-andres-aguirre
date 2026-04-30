@@ -1,9 +1,6 @@
-import { BiLogoInstagramAlt } from 'react-icons/bi';
-import { RiTwitterXLine } from 'react-icons/ri';
-import { IoLogoFacebook, IoLogoLinkedin } from 'react-icons/io';
-import { MdEmail } from 'react-icons/md';
 import Link from 'next/link';
-import { getProjects } from '../app/lib/cloudinary';
+import { getProjects } from '../lib/cloudinary';
+import SocialNetworks from './social-networks';
 
 const Aside = async () => {
   const projects = await getProjects();
@@ -34,30 +31,7 @@ const Aside = async () => {
       </nav>
 
       {/* Social */}
-      <section className="flex justify-between">
-        <div className="flex gap-1">
-          <BiLogoInstagramAlt
-            size={28}
-            fill="#1e2939"
-          />
-          <RiTwitterXLine
-            size={28}
-            fill="#1e2939"
-          />
-          <IoLogoFacebook
-            size={28}
-            fill="#1e2939"
-          />
-          <IoLogoLinkedin
-            size={28}
-            fill="#1e2939"
-          />
-        </div>
-        <MdEmail
-          size={28}
-          fill="#1e2939"
-        />
-      </section>
+      <SocialNetworks />
     </aside>
   );
 };
