@@ -1,7 +1,7 @@
 import { CldFoldersResponse, CldResourceResponse } from '@/src/types';
 import { formatProjectName } from './utils';
 
-const MAX_RESULTS = 20;
+const MAX_RESULTS = 500;
 
 export async function getImagesFrom({ project }: { project: string }) {
   const cldResponse = await fetch(
