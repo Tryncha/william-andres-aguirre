@@ -15,7 +15,7 @@ export async function getImagesFrom({ project }: { project: string }) {
   const { resources } = results;
 
   return resources.map((rsc) => ({
-    id: rsc.asset_id,
+    id: rsc.asset_id as string,
     publicId: rsc.public_id,
     url: rsc.secure_url,
     width: rsc.width,
