@@ -1,19 +1,17 @@
-import { CldFoldersResponse, CldResourceResponse } from '@/src/types';
+import { v2 as cloudinary } from 'cloudinary';
+import { CldFoldersResponse } from '@/src/types';
 import { formatProjectName } from './utils';
+
+cloudinary.config({
+  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 const MAX_RESULTS = 500;
 
 export async function getImagesFrom({ project }: { project: string }) {
-  const cldResponse = await fetch(
-    `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/resources/by_asset_folder?asset_folder=${project}&max_results=${MAX_RESULTS}`,
-    {
-      headers: {
-        Authorization: `Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + process.env.CLOUDINARY_API_SECRET).toString('base64')}`
-      }
-    }
-  );
-
-  const results: CldResourceResponse = await cldResponse.json();
+  const results = await cloudinary.api.resources_by_asset_folder(project, { max_results: MAX_RESULTS });
   const { resources } = results;
 
   return resources.map((rsc) => ({
@@ -26,16 +24,7 @@ export async function getImagesFrom({ project }: { project: string }) {
 }
 
 export async function getProjects() {
-  const cldResponse = await fetch(
-    `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/folders`,
-    {
-      headers: {
-        Authorization: `Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + process.env.CLOUDINARY_API_SECRET).toString('base64')}`
-      }
-    }
-  );
-
-  const results: CldFoldersResponse = await cldResponse.json();
+  const results: CldFoldersResponse = await cloudinary.api.root_folders();
   const { folders } = results;
 
   return folders.map((fld) => ({
