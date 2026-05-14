@@ -10,11 +10,11 @@ const Aside = async () => {
       <div className="flex flex-col">
         <Link
           href="/"
-          className="text-2xl font-bold tracking-wider uppercase hover:cursor-pointer"
+          className="text-2xl font-bold tracking-wider text-black uppercase hover:cursor-pointer"
         >
           William A. Aguirre
         </Link>
-        <span className="text-sm tracking-widest text-gray-800 uppercase">Realismo Social</span>
+        <span className="text-sm tracking-widest uppercase">Realismo Social</span>
       </div>
 
       {/* Navigation */}
@@ -23,7 +23,7 @@ const Aside = async () => {
           <Link
             key={prj.id}
             href={prj.id}
-            className="text-gray-800 transition-all hover:cursor-pointer hover:font-medium"
+            className="transition-all hover:cursor-pointer hover:font-medium"
           >
             {prj.name}
           </Link>

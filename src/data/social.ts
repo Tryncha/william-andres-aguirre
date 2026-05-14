@@ -14,4 +14,4 @@ export const SOCIAL_NETWORKS = [
   }
 ];
 
-export const EMAILS = ['andresaguirr12@correo.ugr.es', 'andresaguirr12@gmail.com'];
+export const EMAILS = ['andresaguirr12@gmail.com', 'andresaguirr12@correo.ugr.es'];
