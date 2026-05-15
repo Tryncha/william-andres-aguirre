@@ -2,6 +2,9 @@ import Masonry from '@/src/components/masonry';
 import { getImagesFrom } from '@/src/lib/cloudinary';
 import { getProjectData } from '@/src/lib/utils';
 
+// Revalidate every hour — avoids hitting Cloudinary API on every request
+export const revalidate = 3600;
+
 const ProjectPage = async ({ params }: { params: Promise<{ project: string }> }) => {
   const { project } = await params;
 
