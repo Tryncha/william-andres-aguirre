@@ -10,8 +10,8 @@ cloudinary.config({
 
 const MAX_RESULTS = 500;
 
-export async function getImagesFrom({ project }: { project: string }) {
-  const results = await cloudinary.api.resources_by_asset_folder(project, { max_results: MAX_RESULTS });
+export async function getImagesFrom(projectId: string) {
+  const results = await cloudinary.api.resources_by_asset_folder(projectId, { max_results: MAX_RESULTS });
   const { resources } = results;
 
   return resources.map((rsc) => ({
