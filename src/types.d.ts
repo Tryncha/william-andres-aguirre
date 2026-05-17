@@ -14,3 +14,16 @@ export interface ProjectImage {
   width: number;
   height: number;
 }
+
+export interface ProjectText {
+  author: string;
+  content: string;
+}
+
+export interface ProjectData {
+  id: string;
+  title: string;
+  date: string;
+  location: string;
+  text: ProjectText;
+}

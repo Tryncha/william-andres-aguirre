@@ -18,12 +18,12 @@ const Aside = async () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex flex-col">
+      <nav className="flex flex-col gap-1">
         {projects.map((prj) => (
           <Link
             key={prj.id}
             href={prj.id}
-            className="transition-all hover:cursor-pointer hover:font-medium"
+            className="text-sm tracking-wide uppercase transition-all hover:cursor-pointer hover:font-bold"
           >
             {prj.name}
           </Link>

@@ -1,9 +1,5 @@
-import { TEXTS } from '../data/projects';
-
-export function formatProjectName(name: string) {
-  return (name[0].toUpperCase() + name.slice(1, name.length)).split('-').join(' ');
-}
+import { PROJECTS_DATA } from '../data/projects';
 
 export function getProjectData(projectId: string) {
-  return TEXTS.find((txt) => txt.id === projectId);
+  return PROJECTS_DATA.find((txt) => txt.id === projectId);
 }

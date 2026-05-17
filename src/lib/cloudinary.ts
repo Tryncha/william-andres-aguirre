@@ -1,6 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
 import { CldFoldersResponse } from '@/src/types';
-import { formatProjectName } from './utils';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -29,6 +28,6 @@ export async function getProjects() {
 
   return folders.map((fld) => ({
     id: fld.path as string,
-    name: formatProjectName(fld.name as string)
+    name: (fld.name as string).replaceAll('-', ' ')
   }));
 }
