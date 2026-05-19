@@ -1,4 +1,4 @@
-import { EMAILS } from '@/src/data/social';
+import { EMAILS } from '@/data/social';
 
 const ContactPage = () => {
   return (
