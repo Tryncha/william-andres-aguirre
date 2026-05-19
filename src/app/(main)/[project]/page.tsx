@@ -1,10 +1,10 @@
-import Masonry from '@/src/components/masonry';
-import { getImagesFrom } from '@/src/lib/cloudinary';
-import { getProjectData } from '@/src/lib/utils';
-import { ProjectData } from '@/src/types';
+import Masonry from '@/components/masonry';
+import { getImagesFrom } from '@/lib/cloudinary';
+import { getProjectData } from '@/lib/utils';
+import { ProjectData } from '@/types';
 
 // Revalidate every hour — avoids hitting Cloudinary API on every request
-export const revalidate = 3600;
+// export const revalidate = 3600;
 
 const ProjectInfo = ({ project }: { project?: ProjectData }) => {
   if (!project) return;

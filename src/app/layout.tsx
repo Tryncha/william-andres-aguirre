@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { inter } from '../lib/fonts';
-import Aside from '@/src/components/aside';
-import Footer from '@/src/components/footer';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -15,11 +13,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="es">
       <Analytics />
       <SpeedInsights />
-      <body className={`${inter.className} bg-white text-gray-800`}>
-        <Aside />
-        {children}
-        <Footer />
-      </body>
+      <body className={`${inter.className} bg-gray-50 text-gray-800`}>{children}</body>
     </html>
   );
 };

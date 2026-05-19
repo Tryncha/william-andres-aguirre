@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
-import { CldFoldersResponse } from '@/src/types';
+import { CldFoldersResponse } from '@/types';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,

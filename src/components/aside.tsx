@@ -6,7 +6,7 @@ const Aside = async () => {
   const projects = await getProjects();
 
   return (
-    <aside className="fixed inset-y-0 left-0 flex h-screen w-xs flex-col justify-between border-r border-gray-200 p-6 shadow-sm">
+    <aside className="fixed inset-y-0 left-0 flex h-screen w-xs flex-col justify-between border-r border-gray-200 bg-white p-6 shadow-sm">
       <div className="flex flex-col">
         <Link
           href="/"
