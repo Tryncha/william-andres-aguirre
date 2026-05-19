@@ -1,13 +1,7 @@
 'use server';
 
-import { v2 as cloudinary } from 'cloudinary';
 import { revalidatePath } from 'next/cache';
-
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
+import { cloudinary } from '@/config/cloudinary';
 
 export async function deleteImage(publicId: string, projectId: string) {
   await cloudinary.uploader.destroy(publicId);
@@ -19,8 +13,8 @@ export async function deleteImage(publicId: string, projectId: string) {
 export async function createProject(projectName: string) {
   await cloudinary.api.create_folder(projectName);
 
-  revalidatePath('/admin');
   revalidatePath('/');
+  revalidatePath('/admin');
 }
 
 export async function deleteProject(projectName: string) {
@@ -37,6 +31,6 @@ export async function deleteProject(projectName: string) {
   // 2. Delete folder
   await cloudinary.api.delete_folder(projectName);
 
-  revalidatePath('/admin');
   revalidatePath('/');
+  revalidatePath('/admin');
 }
