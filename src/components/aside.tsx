@@ -12,7 +12,7 @@ const Aside = async () => {
           href="/"
           className="text-2xl font-bold tracking-wider text-black uppercase hover:cursor-pointer"
         >
-          William A. Aguirre
+          Andrés Aguirre C.
         </Link>
         <span className="text-sm tracking-widest uppercase">Realismo Social</span>
       </div>

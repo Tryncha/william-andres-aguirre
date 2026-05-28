@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
-  title: 'William Andres Aguirre'
+  title: 'Andrés Aguirre C.'
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
