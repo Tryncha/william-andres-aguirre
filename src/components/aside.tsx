@@ -10,20 +10,20 @@ const Aside = async () => {
       <div className="flex flex-col">
         <Link
           href="/"
-          className="text-2xl font-bold tracking-wider text-black uppercase hover:cursor-pointer"
+          className="text-2xl font-bold tracking-wider text-black uppercase transition-all hover:cursor-pointer hover:font-extrabold"
         >
           Andrés Aguirre C.
         </Link>
-        <span className="text-sm tracking-widest uppercase">Realismo Social</span>
+        <span className="text-sm font-medium tracking-widest uppercase">Realismo Social</span>
       </div>
 
       {/* Navigation */}
-      <nav className="flex flex-col gap-1">
+      <nav className="flex flex-col gap-2">
         {projects.map((prj) => (
           <Link
             key={prj.id}
-            href={prj.id}
-            className="text-sm tracking-wide uppercase transition-all hover:cursor-pointer hover:font-bold"
+            href={`/gallery/${prj.id}`}
+            className="text-sm font-medium tracking-wide uppercase transition-all hover:cursor-pointer hover:font-bold"
           >
             {prj.name}
           </Link>
