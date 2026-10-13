@@ -10,7 +10,7 @@ const Masonry = ({ images }: { images: ProjectImage[] }) => {
       <span className="mb-1 text-sm font-medium">
         {images.length} {images.length === 1 ? 'foto' : 'fotos'}
       </span>
-      <section className="columns-3 gap-2">
+      <section className="columns-1 gap-2 sm:columns-2 lg:columns-3">
         {images.map((img) => (
           <Link
             key={img.id}

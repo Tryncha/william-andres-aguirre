@@ -3,7 +3,7 @@ import { KeyRound } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="ml-80 flex items-center justify-between border-t border-gray-200 bg-white px-8 py-4 shadow-sm">
+    <footer className="flex flex-col gap-4 border-t border-gray-200 bg-white px-5 py-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:ml-80">
       <div className="flex flex-col">
         <span className="font-medium text-gray-600">&copy; William Andrés Aguirre Cortés · 2026</span>
         <span className="text-xs text-gray-600 italic transition-all hover:font-medium">

@@ -14,7 +14,7 @@ const ProjectInfo = ({ project }: { project?: ProjectData }) => {
       <h2 className="text-2xl font-bold tracking-wide uppercase">{project.title}</h2>
       <span className="text-sm">{project.location}</span>
       <span className="text-sm">{project.date}</span>
-      <p className="mt-8 mb-4 w-4xl text-justify font-medium whitespace-pre-line">{project.text.content}</p>
+      <p className="mt-8 mb-4 w-full max-w-4xl text-justify font-medium whitespace-pre-line">{project.text.content}</p>
       <span className="text-right font-bold">{project.text.author}</span>
     </section>
   );
@@ -27,7 +27,7 @@ const ProjectPage = async ({ params }: { params: Promise<{ project: string }> })
   const images = await getImagesFrom(project);
 
   return (
-    <main className="ml-80 flex flex-1 flex-col items-center justify-center bg-gray-50 p-12">
+    <main className="flex flex-1 flex-col items-center justify-center bg-gray-50 p-5 sm:p-8 lg:ml-80 lg:p-12">
       <ProjectInfo project={projectData} />
       <Masonry images={images} />
     </main>

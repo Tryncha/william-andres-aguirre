@@ -2,9 +2,9 @@ import { EMAILS } from '@/data/social';
 
 const ContactPage = () => {
   return (
-    <main className="ml-80 flex min-h-screen flex-1 items-center justify-center gap-2 bg-gray-50 p-12">
-      <section className="flex flex-col items-center">
-        <h2 className="mb-4 text-xl font-bold">Contactar por correo electrónico</h2>
+    <main className="flex min-h-screen flex-1 items-center justify-center gap-2 bg-gray-50 p-5 sm:p-8 lg:ml-80 lg:p-12">
+      <section className="flex max-w-full flex-col items-center text-center">
+        <h2 className="mb-4 text-lg font-bold sm:text-xl">Contactar por correo electrónico</h2>
         {EMAILS.map((email) => (
           <a
             key={email}

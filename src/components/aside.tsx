@@ -6,8 +6,8 @@ const Aside = async () => {
   const projects = await getProjects();
 
   return (
-    <aside className="fixed inset-y-0 left-0 flex h-screen w-xs flex-col justify-between border-r border-gray-200 bg-white p-6 shadow-sm">
-      <div className="flex flex-col">
+    <aside className="flex w-full flex-col gap-5 border-b border-gray-200 bg-white p-4 shadow-sm sm:p-6 lg:fixed lg:inset-y-0 lg:left-0 lg:h-screen lg:w-xs lg:justify-between lg:border-r lg:border-b-0">
+      <div className="flex flex-col items-center lg:items-start">
         <Link
           href="/"
           className="text-2xl font-bold tracking-wider text-black uppercase transition-all hover:cursor-pointer hover:font-extrabold"
@@ -18,7 +18,7 @@ const Aside = async () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex flex-col gap-2">
+      <nav className="flex flex-col flex-wrap items-center gap-x-4 gap-y-2 border-y border-gray-200 py-4 lg:items-start lg:gap-2 lg:border-0">
         {projects.map((prj) => (
           <Link
             key={prj.id}
