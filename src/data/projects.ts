@@ -22,9 +22,16 @@ export const PROJECTS_DATA: ProjectData[] = [
       content:
         'De la tarde a la noche  muta el cuerpo, el nombre, el estilo cambia, la indumentaria es la forma perfecta que se hace  vital para la fanfarria del concreto, del escondido sexxxo, el cambio ha sido bellamente doloroso, pero al fin y al cabo son guapas.\n\nLa calle de las guapas opera como un no lugar, se pretende escondido a los ojos de la multitud, al margen periférico, de lo convencional, de la normalidad del cuerpo y de la sexualidad formal y aceptada.\n\nSus visitantes son intermitentes, carentes del placer que allí encuentran, formas voluptuosas que exageran sus gustos pegajosos. El placer y la clandestinidad se juntan para hacer una vida que deviene en miradas y contratos orgásmicos, cortos como el placer del cuerpo, sus perfumes siempre son de altos costos y sus ropas la piel que habitan, que se desgarra por un precio debidamente acordado. En los límites del mercado público siempre están las bellas formas, las deseadas formas del placer completo que altera al clero y nuestros padres.\n\nEste espacio se transforma con las horas, con el paso del tiempo, el atardecer es perfecto para encontrar la sensualidad de la calle de las guapas. La fotografía opera como la imagen de la transformación en este espacio, como el cambio de los personajes en el tiempo y el espacio vueltos sedimento periférico, vueltos cuerpos deseados, usados, gustosamente violentados. Los personajes habituales son de allí en las horas convenidas…en la calle de las guapas estas fotografías devienen imagen de una imagen, mágica bidimensionalidad fotográfica en oposición a la tridimensionalidad de lo real, en el fondo la existencia, el agotamiento y en el borde de estas imágenes lo que nunca podrán mostrar y que dan qué pensar.'
     }
+  },
+  {
+    id: 'totumal',
+    title: 'Totumal',
+    date: '2016',
+    location: 'Resguardo Indígena de Totumal · Belalcázar, Caldas, Colombia',
+    text: {
+      author: 'William Andrés Aguirre Cortés',
+      content:
+        'Un espacio donde la lluvia se convierte en el escenario que abraza la inocencia y la melancolía de la infancia indígena, los niños y niñas del Resguardo Indígena "Totumal" nos invitan a contemplar su conexión con la tierra. Cada fotografía captura momentos melancólicos que resaltan su profunda conexión con la naturaleza, revelando la pureza y la fortaleza de su espíritu en medio de este fenómeno natural. Las imágenes fotográficas crean un testimonio visual, un documento social y humanista sobre su arraigo y sus raíces, testigos del asombro y la reflexión ante un telón de fondo que realza la fragilidad y la vitalidad de estos pequeños guardianes de su legado cultural siempre en disputa. Sus rostros reflejan una inocencia eterna, recordándonos así la importancia de honrar y preservar la riqueza de estas comunidades. Los niños y las niñas nos invitan a sumergirnos en un universo donde son portadores de una sabiduría ancestral, envueltos en una melancolía serena que nos invita a reflexionar sobre la belleza efímera de la infancia indígena. A través de estas fotografías, celebramos su alegría y su conexión eterna con la tierra, recordándonos así la diversidad y fortaleza de las comunidades indígenas en Colombia.'
+    }
   }
-  // {
-  //   id: 'migrantes',
-  //   title: 'La distancia tiene rostro'
-  // }
 ];
