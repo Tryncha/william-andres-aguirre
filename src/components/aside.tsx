@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getProjects } from '../lib/cloudinary';
-import SocialNetworks from './social-networks';
+import EmailInfo from './email-info';
+import { SOCIAL_NETWORKS } from '@/data/social';
 
 const Aside = async () => {
   const projects = await getProjects();
@@ -31,7 +32,22 @@ const Aside = async () => {
       </nav>
 
       {/* Social */}
-      <SocialNetworks />
+      <section className="flex items-center justify-between">
+        <div className="flex gap-1">
+          {SOCIAL_NETWORKS.map((net) => (
+            <a
+              key={net.id}
+              href={net.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-800 transition-all hover:scale-105 hover:cursor-pointer"
+            >
+              <net.Icon size={28} />
+            </a>
+          ))}
+        </div>
+        <EmailInfo />
+      </section>
     </aside>
   );
 };
