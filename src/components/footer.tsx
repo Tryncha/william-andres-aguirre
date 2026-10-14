@@ -13,7 +13,7 @@ const Footer = () => {
       </div>
       <Link
         href="/admin"
-        className="transition-all hover:scale-105 hover:cursor-pointer"
+        className="hidden transition-all hover:scale-105 hover:cursor-pointer lg:block"
       >
         <KeyRound />
       </Link>
