@@ -30,9 +30,15 @@ const ProjectPage = async ({ params }: { params: Promise<{ project: string }> })
   const images = await getImagesFrom(project);
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center bg-gray-50 p-5 sm:p-8 lg:ml-80 lg:p-12">
-      <ProjectInfo project={projectData} />
-      <Masonry images={images} />
+    <main className="flex min-h-dvh flex-1 flex-col items-center justify-center bg-gray-50 p-5 sm:p-8 lg:ml-80 lg:p-12">
+      {images.length === 0 ? (
+        <section className="flex items-center justify-center text-sm text-gray-500">Álbum en desarrollo</section>
+      ) : (
+        <>
+          <ProjectInfo project={projectData} />
+          <Masonry images={images} />
+        </>
+      )}
     </main>
   );
 };

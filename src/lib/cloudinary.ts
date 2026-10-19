@@ -16,7 +16,7 @@ export async function getImagesFrom(projectId: string) {
   }));
 }
 
-export async function getProjects() {
+export async function getProjectsMainInfo() {
   const results: CldFoldersResponse = await cloudinary.api.root_folders();
   const { folders } = results;
 

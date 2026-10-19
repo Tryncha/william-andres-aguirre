@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { getProjects } from '../lib/cloudinary';
+import { getProjectsMainInfo } from '../lib/cloudinary';
 import EmailInfo from './email-info';
 import { SOCIAL_NETWORKS } from '@/data/social';
 import ProjectLink from './project-link';
 
 const Aside = async () => {
-  const projects = await getProjects();
+  const projects = await getProjectsMainInfo();
 
   return (
     <aside className="flex w-full flex-col gap-5 border-b border-gray-200 bg-white p-4 shadow-sm sm:p-6 lg:fixed lg:inset-y-0 lg:left-0 lg:h-screen lg:w-xs lg:justify-between lg:border-r lg:border-b-0">

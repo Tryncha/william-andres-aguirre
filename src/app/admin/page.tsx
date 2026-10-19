@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getProjects } from '@/lib/cloudinary';
+import { getProjectsMainInfo } from '@/lib/cloudinary';
 import CreateProjectForm from '@/components/admin/create-project-form';
 import DeleteProjectButton from '@/components/admin/delete-project-button';
 import { auth } from '@/auth';
@@ -24,7 +24,7 @@ const ProjectInfo = ({ projectId, projectName }: { projectId: string; projectNam
 };
 
 const AdminPage = async () => {
-  const projects = await getProjects();
+  const projects = await getProjectsMainInfo();
   const session = await auth();
 
   if (!session) {
