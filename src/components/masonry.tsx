@@ -23,6 +23,7 @@ const Masonry = ({ images }: { images: ProjectImage[] }) => {
               width={img.width}
               height={img.height}
               alt={img.publicId}
+              className="animate-fade-in"
             />
           </Link>
         ))}
