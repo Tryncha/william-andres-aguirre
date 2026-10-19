@@ -10,14 +10,22 @@ const DeleteProjectButton = ({ projectId, projectName }: { projectId: string; pr
 
   const handleDelete = async () => {
     if (confirm(`¿Eliminar el proyecto "${projectName}" y TODAS sus imágenes?\nEsta acción no se puede deshacer.`)) {
-      setIsDeleting(true);
+      if (
+        confirm(
+          `¿Totalmente seguro que quieres eliminar el proyecto "${projectName}" y TODAS sus imágenes?\nEsta acción no se puede deshacer.`
+        )
+      ) {
+        if (confirm(`¿ELIMINAR "${projectName}"?`)) {
+          setIsDeleting(true);
 
-      try {
-        await deleteProject(projectId);
-        router.refresh();
-      } catch {
-        alert('No se pudo eliminar el proyecto. Intenta de nuevo.');
-        setIsDeleting(false);
+          try {
+            await deleteProject(projectId);
+            router.refresh();
+          } catch {
+            alert('No se pudo eliminar el proyecto. Intenta de nuevo.');
+            setIsDeleting(false);
+          }
+        }
       }
     }
   };
