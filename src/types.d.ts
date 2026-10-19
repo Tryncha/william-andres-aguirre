@@ -24,6 +24,11 @@ export interface ProjectData {
   id: string;
   title: string;
   date: string;
-  location: string;
+  location: Location;
   text: ProjectText;
+}
+
+export interface Location {
+  name: string;
+  link?: string;
 }

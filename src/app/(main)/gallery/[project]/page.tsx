@@ -2,6 +2,7 @@ import Masonry from '@/components/masonry';
 import { getImagesFrom } from '@/lib/cloudinary';
 import { getProjectData } from '@/lib/utils';
 import { ProjectData } from '@/types';
+import { ExternalLink } from 'lucide-react';
 
 // Revalidate every hour — avoids hitting Cloudinary API on every request
 // export const revalidate = 3600;
@@ -12,7 +13,24 @@ const ProjectInfo = ({ project }: { project?: ProjectData }) => {
   return (
     <section className="mt-4 mb-12 flex flex-col text-center">
       <h2 className="text-2xl font-bold tracking-wide uppercase">{project.title}</h2>
-      <span className="text-sm">{project.location}</span>
+      {project.location.link ? (
+        <span className="flex items-center justify-center gap-2">
+          <a
+            href={project.location.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm transition-all hover:font-medium hover:underline"
+          >
+            {project.location.name}
+          </a>
+          <ExternalLink
+            size={16}
+            strokeWidth={2}
+          />
+        </span>
+      ) : (
+        <span className="text-sm">{project.location.name}</span>
+      )}
       <hr className="mx-auto my-4 w-1/4 border-gray-500" />
       <p className="my-4 w-full max-w-4xl text-justify font-medium whitespace-pre-line">{project.text.content}</p>
       <div className="flex justify-end gap-2">
