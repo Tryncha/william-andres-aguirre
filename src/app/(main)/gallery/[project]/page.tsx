@@ -13,9 +13,12 @@ const ProjectInfo = ({ project }: { project?: ProjectData }) => {
     <section className="mt-4 mb-12 flex flex-col text-center">
       <h2 className="text-2xl font-bold tracking-wide uppercase">{project.title}</h2>
       <span className="text-sm">{project.location}</span>
-      <span className="text-sm">{project.date}</span>
-      <p className="mt-8 mb-4 w-full max-w-4xl text-justify font-medium whitespace-pre-line">{project.text.content}</p>
-      <span className="text-right font-bold">{project.text.author}</span>
+      <hr className="mx-auto my-4 w-1/4 border-gray-500" />
+      <p className="my-4 w-full max-w-4xl text-justify font-medium whitespace-pre-line">{project.text.content}</p>
+      <div className="flex justify-end gap-2">
+        <span className="font-bold">{project.text.author}</span>
+        <span className="border-l border-gray-500 px-2 text-gray-500">{project.date}</span>
+      </div>
     </section>
   );
 };

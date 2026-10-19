@@ -7,9 +7,9 @@ import { ProjectImage } from '../types';
 const Masonry = ({ images }: { images: ProjectImage[] }) => {
   return (
     <section className="flex flex-col">
-      <span className="mb-1 text-sm font-medium">
+      {/* <span className="mb-1 text-sm font-medium">
         {images.length} {images.length === 1 ? 'foto' : 'fotos'}
-      </span>
+      </span> */}
       <section className="columns-1 gap-2 sm:columns-2 lg:columns-3">
         {images.map((img) => (
           <Link
