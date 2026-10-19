@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getProjects } from '../lib/cloudinary';
 import EmailInfo from './email-info';
 import { SOCIAL_NETWORKS } from '@/data/social';
+import ProjectLink from './project-link';
 
 const Aside = async () => {
   const projects = await getProjects();
@@ -21,13 +22,11 @@ const Aside = async () => {
       {/* Navigation */}
       <nav className="flex flex-col flex-wrap items-center gap-x-4 gap-y-2 border-y border-gray-200 py-4 lg:items-start lg:gap-2 lg:border-0">
         {projects.map((prj) => (
-          <Link
+          <ProjectLink
             key={prj.id}
-            href={`/gallery/${prj.id}`}
-            className="text-sm font-medium tracking-wide uppercase transition-all hover:cursor-pointer hover:font-bold"
-          >
-            {prj.name}
-          </Link>
+            id={prj.id}
+            name={prj.name}
+          />
         ))}
       </nav>
 
