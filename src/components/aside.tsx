@@ -20,7 +20,8 @@ const Aside = async () => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex flex-col flex-wrap items-center gap-x-4 gap-y-2 border-y border-gray-200 py-4 lg:items-start lg:gap-2 lg:border-0">
+      {/* <section className="flex flex-col gap-4"> */}
+      <nav className="flex flex-col items-center gap-x-4 gap-y-2 border-y border-gray-200 py-4 lg:items-start lg:gap-2 lg:border-0">
         {projects.map((prj) => (
           <ProjectLink
             key={prj.id}
@@ -29,6 +30,13 @@ const Aside = async () => {
           />
         ))}
       </nav>
+      {/* <Link
+          href="/about"
+          className="text-center text-sm tracking-wide uppercase transition-all hover:cursor-pointer hover:font-bold xl:text-left"
+        >
+          Sobre mí
+        </Link> */}
+      {/* </section> */}
 
       {/* Social */}
       <section className="flex items-center justify-between">
