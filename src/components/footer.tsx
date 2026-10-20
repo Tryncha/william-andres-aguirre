@@ -11,12 +11,12 @@ const Footer = () => {
           cambios políticos, sociales y humanos.&quot;
         </span> */}
       </div>
-      <Link
+      {/* <Link
         href="/admin"
         className="hidden transition-all hover:scale-105 hover:cursor-pointer lg:block"
       >
         <KeyRound />
-      </Link>
+      </Link> */}
     </footer>
   );
 };
