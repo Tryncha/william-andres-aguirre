@@ -8,10 +8,10 @@ import { ProjectImage } from '../types';
 const MAX_VIEWER_WIDTH = 2000;
 
 // Viewer image size: width is capped so we don't request the full-size original from Cloudinary
-const getViewerSize = (img: ProjectImage) => {
+function getViewerSize(img: ProjectImage) {
   const width = Math.min(img.width, MAX_VIEWER_WIDTH);
   return { width, height: Math.round((img.height * width) / img.width) };
-};
+}
 
 const Masonry = ({ images }: { images: ProjectImage[] }) => {
   // Index of the photo open in the viewer. null = viewer closed.
